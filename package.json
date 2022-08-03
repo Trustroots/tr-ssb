@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "ssb-server": "ssb-server",
+    "ssb-server": "ssb-server --",
     "whoami": "ssb-server whoami -- --path ./data",
     "friends": "ssb-server friends.get -- --path ./data",
     "start": "ssb-server start -- --path ./data"
