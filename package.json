@@ -1,7 +1,8 @@
 {
   "scripts": {
     "ssb-server": "ssb-server",
-    "start": "ssb-server start"
+    "whoami": "ssb-server whoami -- --path ./data",
+    "start": "ssb-server start -- --path ./data"
   },
   "dependencies": {
     "ssb-server": "^15.3.0"
