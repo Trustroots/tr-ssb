@@ -6,6 +6,7 @@ Experiments with SSB
 
 - Install nodejs and yarn
 - Clone this repo
+- If you're using `nvm` run `nvm install` and `nvm use`
 - `yarn` to install dependencies
 - `yarn start` to run the server
 - Open a new terminal
