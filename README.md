@@ -1,6 +1,8 @@
 # tr-ssb
 
-Experiments with SSB
+Experiments with Secure Scuttlebutt (SSB).
+
+The idea is to have a disjoint network of SSB, that we can use for experiments without sending out anything over the wider SSB network. 
 
 ## Getting started
 
@@ -18,3 +20,5 @@ Experiments with SSB
   - Accept an invite like so:
     - `yarn ssb-server invite.accept "INVITE_CODE" -- --path ./data`
 - Live long and prosper
+
+
