@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "ssb-server": "ssb-server",
+    "start": "ssb-server start"
+  },
+  "dependencies": {
+    "ssb-server": "^15.3.0"
+  }
+}
