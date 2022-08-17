@@ -146,3 +146,13 @@ Which would allow for alternate location formats like:
   "people": 3
 }
 ```
+
+I think it's important to remember that there's no way to enforce schemas. So users may publish messages of any format in the network, and software needs to either accept them or skip them. Therefore, with fields like `location`, maybe it's important to put all the location options into a single object. Perhaps it's easier to simply accept different location types, without any means of ensuring that only 1 location is present for any given message.
+
+### Locations
+
+Trying to capture locations is tricky. With your home, one likely doesn't want to publish the precise location. Yet with other things, like furniture identified as being gifted on the street, the precise location is useful. Open location codes (called Plus Codes) are an interesting method of encoding areas. As most things being described have physical mass, they occupy areas in space and not points. But if one wants to specify "central Paris" as a location, it can be difficult to achieve with a single Plus Code.
+
+One neat feature is that a Plus Code can be shortened to increase the size of the area it represents. So if I know the Plus Code of my home, I can remove some trailing digits (replace them with `0` padding) and now I have a location which includes my home, but is less accurate.
+
+As Plus Codes can be encoded and decoded offline, without any online lookup, they can work well in the scuttleverse where some operations can be expected to be performed offline.
