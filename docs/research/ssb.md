@@ -112,3 +112,37 @@ Using `plusCodes` plural instead of `plusCode` singular:
   "people": 3
 }
 ```
+
+It could also be an option to specify location as a sub schema like so:
+
+```json
+{
+  "type": "gift/offering",
+  "version": "v1",
+  "gift": "hospitality",
+  "location": {
+    "plusCode": "9F4MFC00+"
+  },
+  "title": "Space for up to 3 people",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis.",
+  "people": 3
+}
+```
+
+Which would allow for alternate location formats like:
+
+```json
+{
+  "type": "gift/offering",
+  "version": "v1",
+  "gift": "hospitality",
+  "location": {
+    "latitude": 12.1913,
+    "longitude": 10.1992,
+    "radius": 200
+  },
+  "title": "Space for up to 3 people",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis.",
+  "people": 3
+}
+```
