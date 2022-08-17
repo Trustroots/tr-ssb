@@ -52,7 +52,7 @@ Other information to include (schema to be defined):
 
 - `status` - This is `yes`, `maybe`, or `no` in trustroots
   - Presumably we could drop this, it seems a bit wonky to have "maybe" offers, all offers should be considered as "maybe" offers
-- `location` - An open location code (plus code)
+- `plusCode` - An open location code (plus code) specifying where the gift is located
 - `startDateTime` - A date and time when the gift becomes available
 - `expiryDateTime` - A date and time when the gift expires (is no longer available)
 - `numberOfPeople` - How many people can be accommodated
@@ -62,3 +62,53 @@ Other choices the user can make currently which wouldn't map onto the message sc
 
 - Only show to circles
   - This would control how widely the gift is replicated, which likely can't be set on a message basis but might be possible to signal on a feed basis in SSB.
+
+### Questions
+
+It seems like times and locations don't have a particularly clear standard way of being stored in the scuttleverse. It might be helpful to specify that. There are a couple of date formats in use.
+
+### Brainstorming
+
+Some examples of different schemas.
+
+```json
+{
+  "type": "gift/offering",
+  "version": "v1",
+  "gift": "hospitality",
+  "plusCode": "9F4MFC00+",
+  "title": "Space for up to 3 people",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis.",
+  "people": 3
+}
+```
+
+A wish rather than an offer:
+
+```json
+{
+  "type": "gift/seeking",
+  "version": "v1",
+  "gift": "hospitality",
+  "plusCode": "9F4M0000+",
+  "title": "Hitchhiking to Berlin with 2 friends",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis.",
+  "people": 3,
+  "startsAt": "2022-09-15T00:00:00.000Z",
+  "endsAt": "2022-09-18T00:00:00.000Z",
+}
+```
+
+Using `plusCodes` plural instead of `plusCode` singular:
+
+```json
+{
+  "type": "gift/seeking",
+  "version": "v1",
+  "gift": "hospitality",
+  "plusCodes": ["9F4MG700+", "9F4MG800+", "9F4MG900+", "9F4MGC00+", "9F4MGF00+", "9F4MF800+", "9F4MF900+", "9F4MFC00+", "9F4MFF00+"],
+  "title": "Hitchhiking to Berlin with 2 friends",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis.",
+  "people": 3
+}
+```
