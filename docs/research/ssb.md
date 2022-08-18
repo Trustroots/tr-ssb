@@ -65,4 +65,15 @@ Other choices the user can make currently which wouldn't map onto the message sc
 
 ### Questions
 
-It seems like times and locations don't have a particularly clear standard way of being stored in the scuttleverse. It might be helpful to specify that. There are a couple of date formats in use.
+- How to encode dates and times
+- How to encode locations (see `../brainstorming/locations.md`)
+
+#### Times
+
+There seem to be multiple time encoding methods used in SSB schemas. From a unix epoch timestamp (as a signed 64 bit integer to support values in the past) to an unusual object including a timestamp, timezone and other data to a JavaScript style date (eg `2018-03-15T03:40:06.222Z`).
+
+There are likely many opinions here. It's doubtful any specific strategy has any massive advantage over the others.
+
+The SSB log format itself only includes a timestamp, without any timezone information.
+
+Question: is it ever useful to store the "local" timezone along with a date?
