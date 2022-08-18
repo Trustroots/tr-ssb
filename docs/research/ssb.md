@@ -77,3 +77,5 @@ There are likely many opinions here. It's doubtful any specific strategy has any
 The SSB log format itself only includes a timestamp, without any timezone information.
 
 Question: is it **ever** useful to store the "local" timezone along with a date?
+
+If not, then using the same timestamp format as in the feed itself makes the most sense. Any application which is working with feeds is likely capable of parsing these timestamps already.

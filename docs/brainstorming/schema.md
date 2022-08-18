@@ -125,6 +125,19 @@ Is metadata the appropriate name for this type of content?
 
 Maybe not. Perhaps it's better called `fields` or `data` or something. Maybe even specify that its purpose is to allow for filtering and call it `filter` or something. Not sure, but I guess it's not really "meta" data, it's actually data. How many people can be accommodated is no more "meta" than the location where the gift is available.
 
+What about applying these rules to all fields? We don't necessarily need to nest the fields. They could be top level fields which we apply these rules to.
+
+- Fields of type date are a unix timestamp in microseconds and suffixed with `At`
+  - Examples like `startsAt`, `expiresAt`, `departsAt`, `arrivesAt`
+- Fields of type `boolean` are prefixed `is` and are preferably always in the affirmative and not the negative case
+  - Examples like `isWheelchairAccessible: false`, `isBikeRepairAvailable: true`, `isVegan: true`
+- Fields of type integer are suffixed `Count`
+  - Examples like `maxPeopleCount: 3`, `itemCount: 8`
+- Other fields of type `string` or `array` of `strings` are rendered as text
+- Fields of type `object` are ignored
+
+If a log entry is of type `gift/offering` or `gift/seeking` then these rules could be applied to render data dynamically without having to know ahead of time what shape the data will take.
+
 ## First step
 
 Having reviewed all the above, here's a more concrete example:
@@ -136,7 +149,9 @@ Having reviewed all the above, here's a more concrete example:
   "gift": "hospitality",
   "plusCodes": ["9F4MG700+"],
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis.",
-  "images": [] // Array of SSB image links
+  "images": [] // Array of SSB image links,
+  "isWheelchairAccessible": false,
+  "maxPeopleCount": 3
 }
 ```
 
