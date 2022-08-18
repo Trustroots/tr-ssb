@@ -101,6 +101,10 @@ Instead of the typical GPX file approach of listing points and drawing a line be
 
 All plus codes resolve to an area on the map. If we use plus codes as the only standard initially, then all data which can be displayed on the map gets linked onto areas.
 
+## Naming
+
+Perhaps the only field required at first is `plusCodes`. It must always contain an array of `string`s if it exists. Those `string`s must be valid plus codes. It can contain only 1, or multiple.
+
 ## Links
 
 - [Open Location Code](https://github.com/google/open-location-code/)
