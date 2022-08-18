@@ -76,4 +76,4 @@ There are likely many opinions here. It's doubtful any specific strategy has any
 
 The SSB log format itself only includes a timestamp, without any timezone information.
 
-Question: is it ever useful to store the "local" timezone along with a date?
+Question: is it **ever** useful to store the "local" timezone along with a date?
